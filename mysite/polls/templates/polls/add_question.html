@@ -1,0 +1,30 @@
+{% extends "polls/greeting.html" %}
+{% block content %}
+
+    <div class="container">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Polls of Birthday</h3>
+              <nav>
+                <ul class="nav masthead-nav top_bar">
+                  <li><a href="{% url 'polls:greeting' %}">Home</a></li>
+                  <li><a href="{% url 'polls:index' %}">All days of birth</a></li>
+                  <li><a href=" {% url 'polls:contact' %}">Contacts</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+        <form action="" method="post" accept-charset="utf-8">
+        {% csrf_token %}
+        <div class="inner cover some_text">
+            <p style="color:black"><input placeholder="Enter a new question" name="choice_text" type="text"></p>
+            <input class='btn btn-lg btn-default btn_chenge' style="color:#da693a" type="submit" value="Add">
+        </div>
+
+        </form>
+
+{% endblock %}

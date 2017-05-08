@@ -1,0 +1,96 @@
+@font-face {
+font-family: BebasNeue; /* Имя шрифта */
+src: url(../fonts/BebasNeue/bebas/BebasNeue%20Regular.otf); /* Путь к файлу со шрифтом */
+}
+
+/*body {
+    background: url("images/back.jpg") no-repeat right;
+    background-size: cover;
+}*/
+
+html {
+    min-height: 100%;
+}
+
+.greet{
+    font-family: "BebasNeue", sans-serif;
+    font-size: 37px;
+    text-align: center;
+    color: goldenrod;
+    text-shadow: 4px 4px 6px black, 0 0 1em #00ffff;
+}
+
+.welcome li a {
+    font-family: "BebasNeue", sans-serif;
+    text-shadow: 4px 4px 5px #020202, 0 0 1em #daa520;
+    color: #bd1c46;
+    text-decoration: none;
+    font-size: 60px;
+}
+.welcome li {
+    list-style: none; /* Убираем маркер с линка */
+}
+
+.list_birth li {
+    list-style: none;
+}
+
+.list_birth {
+    margin-top: 116px;
+    font-size: 20px;
+    margin-right: 42px;
+}
+
+.vote {
+    margin-top: 40px;
+}
+
+.container{
+    max-width:960px;
+    margin:0 auto;
+}
+.container:before,
+.container:after{
+    display: table;
+    content: " "; /* Обязательный элемент для befor after */
+    clear: both;
+}
+
+.nav {
+    margin-top: 7px;
+}
+
+.cover {
+    padding: 40px 20px;
+}
+
+strong {
+    color: red;
+    font-size: 23px;
+}
+
+.some_text {
+    margin-top: 289px;
+    font-size: 25px;
+}
+
+.add_question {
+    list-style: none;
+    font-size: 15px;
+}
+
+.floor p{
+    margin-left: 30px;
+}
+
+.btn_chenge {
+    color: #da693a;
+    padding: 4px !important;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+.add_btn {
+    color: black;
+    border-radius: 6px;
+}

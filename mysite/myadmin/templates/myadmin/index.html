@@ -1,0 +1,7 @@
+{% for i in questions%}
+    <a href="{% url 'myadmin:edit' i.id %}">{{ i }}</a><br>
+{% endfor %}
+
+{% for i in votes %}
+    <a href="{% url 'myadmin:' i.id %}">{{ i }}<a><br>
+{% endfor %}

@@ -1,0 +1,33 @@
+{% extends "polls/greeting.html" %}
+{% block content %}
+    <div class="container">
+
+      <div class="cover-container">
+
+         <div class="">
+         <div class="inner">
+           <h3 class="masthead-brand">Polls of Birthday</h3>
+           <nav>
+           <ul class="nav masthead-nav">
+            <li><a href="{% url 'polls:greeting' %}">Home</a></li>
+            <li><a href="{% url 'polls:index' %}">All days of birth</a></li>
+            <li><a href="{% url 'polls:contact' %}">Contacts</a></li>
+           </ul>
+           </nav>
+           </div>
+           </div>
+           <div class="inner cover">
+         <ul style="padding-top: 140px;">
+
+            <h1>{{ question.question_text }}</h1>
+
+            <ul style="font-size: 20px;">
+            {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote {{ choice.votes|pluralize }}</li>
+            {% endfor %}
+            </ul>
+
+                <a style="font-size: 17px; color: #ff8600;" href="{% url 'polls:vote' question.id %}">Vote again?</a>
+            </ul>
+            </div>
+{% endblock %}

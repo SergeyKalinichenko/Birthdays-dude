@@ -1,0 +1,44 @@
+{% extends "polls/greeting.html" %}
+{% block content %}
+
+    <div class="container">
+
+      <div class="cover-container">
+
+         <div class="">
+         <div class="inner">
+           <h3 class="masthead-brand">Polls of Birthday</h3>
+           <nav>
+           <ul class="nav masthead-nav">
+            <li><a href=" {% url 'polls:greeting' %} ">Home</a></li>
+            <li><a href=" {% url 'polls:index' %} ">All days of birth</a></li>
+            {# <li><a href=" {% url 'polls:add_question' %}">Add question</a></li> #}
+            <li><a href=" {% url 'polls:contact' %}">Contacts</a></li>
+           </ul>
+           </nav>
+           </div>
+           </div>
+           <div class="inner cover">
+         <ul style="padding-top: 140px;">
+
+             <h1>{{ question.question_text }}</h1>
+
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+            <form action="{% url 'polls:vote' question.id %}" method="post">
+
+                {% csrf_token %}
+                {% for choice in question.choice_set.all %}
+                    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+                    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+                {% endfor %}
+
+            <li class="add_question" ><a class="add_question" style=" color:#da693a" href=" {% url 'polls:add_question' question.id %}">Add other question</a></li>
+
+            <input class='btn btn-lg btn-default btn_chenge' style="color:#da693a" type="submit" value="Vote">
+
+            </form>
+
+        </ul>
+            </div>
+{% endblock %}
